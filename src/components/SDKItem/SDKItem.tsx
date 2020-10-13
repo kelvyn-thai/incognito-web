@@ -14,8 +14,13 @@ const Styled = styled.div`
     flex-direction: row;
     align-items: center;
   }
-  label {
+  .hook label {
     font-weight: bold;
+  }
+  .hide {
+    display: none;
+  }
+  .toggle {
   }
 `;
 
@@ -28,7 +33,7 @@ const SDKItem = (props: IProps) => {
         {toggle ? <ExpandLess /> : <ExpandMoreIcon />}
         <label htmlFor=''>{label}</label>
       </button>
-      {toggle && <div className='extra'>{component}</div>}
+      <div className={toggle ? 'toggle' : 'hide'}>{component}</div>
     </Styled>
   );
 };

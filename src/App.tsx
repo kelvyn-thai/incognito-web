@@ -7,6 +7,7 @@ import {
   CurrentTokenInfo,
   PaymentAddress,
   ListTokenSupported,
+  SetListTokenSupported,
 } from '@components/index';
 import SDKItem from '@components/SDKItem';
 
@@ -31,7 +32,6 @@ const Styled = styled.div`
   padding: 2%;
   width: 100%;
   overflow: scroll;
-  border: solid 1px #0c0c0c;
   .no-compatible {
     margin-top: 50px;
   }
@@ -65,6 +65,10 @@ const App: React.FunctionComponent<IProps> = (props) => {
     {
       label: 'List of supported tokens',
       component: <ListTokenSupported />,
+    },
+    {
+      label: 'Set list of supported tokens',
+      component: <SetListTokenSupported />,
     },
     {
       label: 'Current Token Info',
