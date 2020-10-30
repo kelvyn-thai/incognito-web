@@ -452,15 +452,13 @@ textarea {
   padding: 0.2em 0;
 }
 
-button {
-  border: none;
-  padding: 0;
-  margin: 0;
-  background: none;
-}
-
 div,
 button,
 p {
   box-sizing: border-box;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: block;
 }
