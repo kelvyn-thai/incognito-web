@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useEffect } from 'react';
-// import { goServices, getConfig } from 'incognito-js';
+import { goServices, getConfig } from 'incognito-js/build/web/module';
 import ErrorBoundary from '@components/ErrorBoundary/index';
 import { GlobalStyled } from '@styles/index';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -32,16 +32,17 @@ const enhance = (WrappedComponent: FunctionComponent) => (props: IProps) => {
       setState({ ...state, loading: false });
     }
   };
-  // const handleLoadWebAssembly = async () => {
-  //   try {
-  //     const result = await goServices.implementGoMethodUseWasm();
-  //     console.debug(`CONFIG`, getConfig());
-  //   } catch (error) {
-  //     console.debug(`error`, error);
-  //   }
-  // };
+  const handleLoadWebAssembly = async () => {
+    try {
+      const result = await goServices.implementGoMethodUseWasm();
+      console.debug(`CONFIG`, getConfig(), result);
+    } catch (error) {
+      console.debug(`error`, error);
+    }
+  };
+
   useEffect(() => {
-    // handleLoadWebAssembly();
+    handleLoadWebAssembly();
     handleCheckSDKCompatible();
   }, []);
   return (
